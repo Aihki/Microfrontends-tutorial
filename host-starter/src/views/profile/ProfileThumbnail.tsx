@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '../../components/ui/card';
 import DeleteMedia from './DeleteMedia';
 import ModifyMedia from './ModifyMedia';
 // import ThumbCarousel from front_and_sidebar mfe
-import { ThumbCarousel } from 'front_and_sidebar/ThumbCarousel';
+import  ThumbCarousel  from 'front_and_sidebar/ThumbCarousel';
 
 const ProfileThumbnail = (props: {
   mediaItem: MediaItem;

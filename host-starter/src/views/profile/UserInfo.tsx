@@ -12,8 +12,8 @@ import { useUserContext } from 'mediastore/ContextHooks';
 
 const UserInfo = () => {
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
-  const { user, handleLogout } = useUserContext();
-  const { getMediaByUser } = useMedia();
+  const { user, handleLogout, refreshMediaItems } = useUserContext();
+  const { getMediaByUser } = useMedia(refreshMediaItems);
 
   useEffect(() => {
     if (user) {
@@ -22,6 +22,7 @@ const UserInfo = () => {
       });
     }
   }, [user, getMediaByUser]);
+
 
   return (
     <>

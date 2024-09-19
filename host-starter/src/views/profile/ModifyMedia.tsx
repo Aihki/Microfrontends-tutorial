@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { LuPen } from 'react-icons/lu';
 // import useMedia from mediastore mfe
 import { useMedia } from 'mediastore/ApiHooks';
+import { useMediaContext } from 'mediastore/ContextHooks'
 
 const ModifyMedia = (props: {
   mediaItem: MediaItem;
@@ -24,6 +25,7 @@ const ModifyMedia = (props: {
   const { mediaItem } = props;
   const { putMedia } = useMedia();
   const [open, setOpen] = useState(false);
+  const { refreshMedia } = useMediaContext();
 
   const initValues: Pick<MediaItem, 'title' | 'description'> & {
     tags: string;
@@ -46,6 +48,7 @@ const ModifyMedia = (props: {
         tags: inputs.tags.split(',').map((tag) => tag.trim()),
       };
       await putMedia(mediaItem._id, mediaInput, token);
+      refreshMedia();
       setOpen(false);
     } catch (error) {
       console.error('doModify failed', error);

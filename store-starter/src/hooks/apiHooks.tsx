@@ -73,7 +73,7 @@ const useMedia = (refreshMedia?: boolean, refreshSinglemedia?: boolean) => {
     return await fetchData<MediaItem[]>(
       import.meta.env.VITE_MEDIA_API + '/media/user/' + id,
     );
-  }, []);
+  }, [refreshMedia]);
 
   const deleteMedia = async (id: string, token: string) => {
     const options = {

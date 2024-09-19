@@ -12,7 +12,7 @@ import {
 import { MediaItem } from '@sharedTypes/DBTypes';
 import { LuTrash } from 'react-icons/lu';
 // import useMedia from mediastore mfe
-import {useMedia} from 'mediastore/MediaContext';
+import {useMedia} from 'mediastore/ApiHooks';
 
 
 const DeleteMedia = (props: {
