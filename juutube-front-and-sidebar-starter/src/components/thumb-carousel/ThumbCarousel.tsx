@@ -1,5 +1,5 @@
 // Create ThumbCraousel component like in the example
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
 type ThumbCarouselProps = {
   images: string[];
@@ -32,7 +32,7 @@ const ThumbCarousel = ({ images, ...props }: ThumbCarouselProps) => {
       src={
         current
           ? import.meta.env.VITE_FILE_SERVER + current
-          : 'https://placehold.co/640x400?text=Live+Stream'
+          : "https://placehold.co/640x400?text=Live+Stream"
       }
       crossOrigin="anonymous"
       onMouseEnter={() => images.length > 0 && setPlaying(true)}
