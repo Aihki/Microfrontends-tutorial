@@ -8,9 +8,8 @@ import { ThumbCarousel } from 'front_and_sidebar/ThumbCarousel';
 
 const ProfileThumbnail = (props: {
   mediaItem: MediaItem;
-  refreshMedia: () => void;
 }) => {
-  const { mediaItem, refreshMedia } = props;
+  const { mediaItem } = props;
 
   return (
     <Card className="w-1/3 p-4 border-0 shadow-none">
@@ -37,8 +36,8 @@ const ProfileThumbnail = (props: {
             </div>
           </section>
           <section className="w-1/3 flex justify-around">
-            <DeleteMedia mediaItem={mediaItem} refreshMedia={refreshMedia} />
-            <ModifyMedia mediaItem={mediaItem} refreshMedia={refreshMedia} />
+            <DeleteMedia mediaItem={mediaItem}  />
+            <ModifyMedia mediaItem={mediaItem} />
           </section>
         </div>
       </CardContent>

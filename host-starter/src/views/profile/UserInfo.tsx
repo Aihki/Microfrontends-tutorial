@@ -5,14 +5,13 @@ import { useEffect, useState } from 'react';
 import { MediaItem } from '@sharedTypes/DBTypes';
 import ProfileThumbnail from './ProfileThumbnail';
 // import useMedia from mediastore mfe
-import { useMedia } from 'mediastore/MediaContext';
+import { useMedia } from 'mediastore/ApiHooks';
 // import useUserContext from mediastore mfe
 import { useUserContext } from 'mediastore/ContextHooks';
 
 
 const UserInfo = () => {
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
-  const [refresh, setRefresh] = useState(false);
   const { user, handleLogout } = useUserContext();
   const { getMediaByUser } = useMedia();
 
@@ -22,11 +21,7 @@ const UserInfo = () => {
         setMediaItems(data);
       });
     }
-  }, [user, getMediaByUser, refresh]);
-
-  const refreshMedia = () => {
-    setRefresh(!refresh);
-  };
+  }, [user, getMediaByUser]);
 
   return (
     <>
@@ -64,7 +59,6 @@ const UserInfo = () => {
                   <ProfileThumbnail
                     key={mediaItem._id}
                     mediaItem={mediaItem}
-                    refreshMedia={refreshMedia}
                   />
                 ))}
               </div>

@@ -16,13 +16,12 @@ import { MediaItem } from '@sharedTypes/DBTypes';
 import { useState } from 'react';
 import { LuPen } from 'react-icons/lu';
 // import useMedia from mediastore mfe
-import { useMedia } from 'mediastore/MediaContext';
+import { useMedia } from 'mediastore/ApiHooks';
 
 const ModifyMedia = (props: {
   mediaItem: MediaItem;
-  refreshMedia: () => void;
 }) => {
-  const { mediaItem, refreshMedia } = props;
+  const { mediaItem } = props;
   const { putMedia } = useMedia();
   const [open, setOpen] = useState(false);
 
@@ -48,7 +47,6 @@ const ModifyMedia = (props: {
       };
       await putMedia(mediaItem._id, mediaInput, token);
       setOpen(false);
-      refreshMedia();
     } catch (error) {
       console.error('doModify failed', error);
     }

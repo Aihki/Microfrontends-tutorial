@@ -12,15 +12,13 @@ import {
 import { MediaItem } from '@sharedTypes/DBTypes';
 import { LuTrash } from 'react-icons/lu';
 // import useMedia from mediastore mfe
-
 import {useMedia} from 'mediastore/MediaContext';
 
 
 const DeleteMedia = (props: {
   mediaItem: MediaItem;
-  refreshMedia: () => void;
 }) => {
-  const { mediaItem, refreshMedia } = props;
+  const { mediaItem } = props;
 
   const { deleteMedia } = useMedia();
 
@@ -32,7 +30,6 @@ const DeleteMedia = (props: {
       }
       const result = await deleteMedia(mediaItem._id, token);
       alert(result.message);
-      refreshMedia();
     } catch (e) {
       console.error('delete failed', (e as Error).message);
     }
