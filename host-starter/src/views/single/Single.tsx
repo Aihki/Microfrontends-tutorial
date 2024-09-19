@@ -1,5 +1,5 @@
 import CommentArea from "@/components/comments/CommentArea";
-import VideoPlayer from "@/components/player/VideoPlayer";
+import VideoPlayer from "video_player/VideoPlayer";
 import { MediaContextType } from "@sharedTypes/DBTypes";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
