@@ -1,6 +1,6 @@
 import { MediaItem } from "@sharedTypes/DBTypes";
 import { Link } from "react-router-dom";
-import ThumbCarousel from "sidebar_and_thumb/ThumbCarousel";
+import ThumbCarousel from "front_and_sidebar/ThumbCarousel";
 
 const SidebarThumbnail = (props: { mediaItem: MediaItem }) => {
   const { mediaItem } = props;

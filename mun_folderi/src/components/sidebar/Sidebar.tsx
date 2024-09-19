@@ -1,7 +1,5 @@
-// Create Sidebar component like in the example
-// difference is that get mediaItems as prop
 import { MediaItem } from "@sharedTypes/DBTypes";
-import SidebarThumbnail from "sidebar_and_thumb/ThumbCarousel";
+import SidebarThumbnail from "./SidebarThumbnail";
 
 const Sidebar = (props: { mediaItems: MediaItem[] }) => {
   const { mediaItems } = props;
