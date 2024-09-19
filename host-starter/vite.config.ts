@@ -14,6 +14,7 @@ export default defineConfig({
         mediastore: "http://localhost:3001/assets/remoteEntry.js",
         front_and_sidebar: "http://localhost:3002/assets/remoteEntry.js",
         video_player: "http://localhost:3003/assets/remoteEntry.js",
+        uploadMicrofrontend: "http://localhost:3069/assets/remoteEntry.js",
         sidebar_and_thumb: "http://localhost:3010/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "react-router-dom"],
